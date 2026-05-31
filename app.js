@@ -42,7 +42,7 @@ function calculateSalary(){
    rows[i].ey=n.sm===1?n.sy-1:n.sy;
    rows[i].em=n.sm===1?12:n.sm-1;
  }
- let grand=0, html="<table class='table'><tr><th>Rank</th><th>Window</th><th>Total</th></tr>";
+ let grand=0, html="<table class='table'><tr><th>Post</th><th>Window</th><th>Total</th></tr>";
  for(let row of rows){
    if(row.ey==null||row.em==null){alert("Last row needs end year/month"); return;}
    let payout=0,start=row.sy*12+row.sm;
