@@ -117,3 +117,93 @@ body{background:#f4f7fb}
     font-weight:600;
     letter-spacing:.3px;
 }
+
+div[align="center"]{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin:20px auto;
+    padding:12px 22px;
+
+    background:linear-gradient(135deg,#003893,#002868);
+    color:#fff;
+
+    border:none; /* Removed red border */
+    border-radius:16px;
+
+    font-family:'Segoe UI',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:.5px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 20px rgba(0,56,147,.25);
+
+    position:relative;
+    overflow:hidden;
+
+    transition:all .35s ease;
+}
+
+/* Shine Effect */
+div[align="center"]::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:80%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transition:1s;
+}
+
+div[align="center"]:hover::before{
+    left:120%;
+}
+
+div[align="center"]:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 15px 30px rgba(0,56,147,.35);
+}
+
+div[align="center"] a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+div[align="center"] img{
+    background:#fff;
+    padding:4px 8px;
+    border-radius:8px;
+    transition:all .3s ease;
+}
+
+div[align="center"] img:hover{
+    transform:scale(1.08);
+}
+
+/* Mobile */
+@media (max-width:576px){
+    div[align="center"]{
+        flex-direction:column;
+        text-align:center;
+        padding:15px;
+        gap:10px;
+        width:100%;
+        max-width:280px;
+        margin:auto;
+    }
+}
