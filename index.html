@@ -1,22 +1,98 @@
 <!doctype html><html><head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Nepal Civil Service Calculator by Infinity</title>
+<title>Civil Servant Salary Calculator by _beyond.the.infinity_</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
 <div class="container py-4">
-<h2>Nepal Civil Service Calculator by _beyond.the.infinity_</h2>
+<h2>Civil Servant Salary Calculator by _beyond.the.infinity_</h2>
 <div class="card shadow-sm">
 <div class="card-header d-flex justify-content-between">
 <span>Career Timeline</span>
 </div></div>
 
 <table class="table table-bordered" id="tbl">
-<thead><tr><th>Rank</th><th>Start Year</th><th>Start Month</th><th>End Year (last row only)</th><th>End Month</th><th></th></tr></thead>
+<thead><tr><th>Post</th><th>Start Year</th><th>Start Month</th><th>End Year</th><th>End Month</th><th></th></tr></thead>
 <tbody></tbody></table>
 
-<button class="btn btn-primary" onclick="calculateSalary()">तलव हिसाव गर्नुहोस</button> <span>   </span><button class="btn btn-success m-auto" onclick="addRow()">➕ Add Row</button>
+<button class="btn btn-primary" onclick="calculateSalary()">Calculate Salary Details</button> <span>   </span><button class="btn btn-success m-auto" onclick="addRow()">➕ Add Row</button>  <span class="d-flex justify-content-center align-items-center">Copyright &copy;_beyond.the.infinity_,2026</span>
 
 <div id="out" class="mt-3"></div>
-<footer>Note: This is for personal reference purposes only and not official. This Calculation can make mistakes, so use it at  your own risk.</footer>
-  <div>Copyright &copy;_beyond.the.infinity_,2026</div>
-</div><script src="app.js"></script></body></html>
+<div class="alert alert-warning text-center blink-warning">
+    ⚠️ Note: This is for personal reference purposes only and not official.
+    This calculation may contain errors. Please verify with official records.
+</div>
+
+<div class="modal fade" id="salaryDisclaimerModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Important Notice</h5>
+      </div>
+
+      <div class="modal-body">
+        <p><strong>Do you wanna calculate your salary details?</strong></p>
+        <p>
+          Please note that the calculation made by this system is just an approximate only and may not be fully accurate.You can use it for personal use only and not for official purpose.Please verify the results with actual records & sources.
+        </p>
+        <p>
+          Thank You.....!
+        </p>
+    </hr>
+        <p>
+          Ohh I forgot 😊 If you want to proceed ahead click
+          <strong>Yes</strong> else click <strong>No</strong>.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="exitBtn">
+          No
+        </button>
+
+        <button type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal">
+          Yes
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="js/app.js"></script></body></html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const popup = new bootstrap.Modal(
+        document.getElementById("salaryDisclaimerModal"),
+        {
+            backdrop: "static",
+            keyboard: false
+        }
+    );
+
+    popup.show();
+
+    document.getElementById("exitBtn").addEventListener("click", function () {
+
+        // Option 1: Go back
+        history.back();
+
+        // Option 2:
+        window.location.href = "/Thank You...!";
+
+    });
+
+});
+</script>
+
+<script src="app.js"></script>
